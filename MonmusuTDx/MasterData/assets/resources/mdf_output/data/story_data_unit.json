@@ -5263,6 +5263,58 @@
       "shopId": 0
     },
     {
+      "id": 1002305,
+      "story_category": 5,
+      "story_id": "23",
+      "title": "ショタさま、拷問の時間です",
+      "chapter_name": "character",
+      "scenario_name": "66060A0_Nml",
+      "next_id": 1002306,
+      "next_view_id": 0,
+      "view_priority": 1,
+      "r18": 0,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "point",
+            "m_walletName": "free_coin",
+            "m_count": 50
+          }
+        ]
+      },
+      "requireItemCategory": "item",
+      "requireItemName": "item.unit_skin.23_2",
+      "unlockLevel": 0,
+      "shopId": 0
+    },
+    {
+      "id": 1002306,
+      "story_category": 5,
+      "story_id": "23",
+      "title": "ショタさま、拷問の時間です",
+      "chapter_name": "character",
+      "scenario_name": "66060A1_R18",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 2,
+      "r18": 1,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "",
+            "m_walletName": "",
+            "m_count": 0
+          }
+        ]
+      },
+      "requireItemCategory": "",
+      "requireItemName": "",
+      "unlockLevel": 0,
+      "shopId": 0
+    },
+    {
       "id": 1002501,
       "story_category": 4,
       "story_id": "25",
@@ -46739,6 +46791,422 @@
       "title": "謎が謎を呼ぶ！",
       "chapter_name": "character",
       "scenario_name": "10419B1_R18",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 0,
+      "r18": 1,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "",
+            "m_walletName": "",
+            "m_count": 0
+          }
+        ]
+      },
+      "requireItemCategory": "",
+      "requireItemName": "",
+      "unlockLevel": 0,
+      "shopId": 0
+    },
+    {
+      "id": 1018601,
+      "story_category": 4,
+      "story_id": "186",
+      "title": "契約は大事",
+      "chapter_name": "character",
+      "scenario_name": "10186A0_Nml",
+      "next_id": 1018602,
+      "next_view_id": 1018603,
+      "view_priority": 0,
+      "r18": 0,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "point",
+            "m_walletName": "free_coin",
+            "m_count": 50
+          }
+        ]
+      },
+      "requireItemCategory": "",
+      "requireItemName": "",
+      "unlockLevel": 15,
+      "shopId": 0
+    },
+    {
+      "id": 1018602,
+      "story_category": 4,
+      "story_id": "186",
+      "title": "契約は大事",
+      "chapter_name": "character",
+      "scenario_name": "10186A1_R18",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 0,
+      "r18": 1,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "",
+            "m_walletName": "",
+            "m_count": 0
+          }
+        ]
+      },
+      "requireItemCategory": "",
+      "requireItemName": "",
+      "unlockLevel": 0,
+      "shopId": 0
+    },
+    {
+      "id": 1018603,
+      "story_category": 4,
+      "story_id": "186",
+      "title": "息抜きドキドキ観光",
+      "chapter_name": "character",
+      "scenario_name": "10186B0_Nml",
+      "next_id": 1018604,
+      "next_view_id": 0,
+      "view_priority": 0,
+      "r18": 0,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "point",
+            "m_walletName": "free_coin",
+            "m_count": 50
+          }
+        ]
+      },
+      "requireItemCategory": "",
+      "requireItemName": "",
+      "unlockLevel": 60,
+      "shopId": 0
+    },
+    {
+      "id": 1018604,
+      "story_category": 4,
+      "story_id": "186",
+      "title": "息抜きドキドキ観光",
+      "chapter_name": "character",
+      "scenario_name": "10186B1_R18",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 0,
+      "r18": 1,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "",
+            "m_walletName": "",
+            "m_count": 0
+          }
+        ]
+      },
+      "requireItemCategory": "",
+      "requireItemName": "",
+      "unlockLevel": 0,
+      "shopId": 0
+    },
+    {
+      "id": 1043101,
+      "story_category": 4,
+      "story_id": "431",
+      "title": "魂の抜ける声",
+      "chapter_name": "character",
+      "scenario_name": "10431A0_Nml",
+      "next_id": 1043102,
+      "next_view_id": 1043103,
+      "view_priority": 0,
+      "r18": 0,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "point",
+            "m_walletName": "free_coin",
+            "m_count": 50
+          }
+        ]
+      },
+      "requireItemCategory": "",
+      "requireItemName": "",
+      "unlockLevel": 15,
+      "shopId": 0
+    },
+    {
+      "id": 1043102,
+      "story_category": 4,
+      "story_id": "431",
+      "title": "魂の抜ける声",
+      "chapter_name": "character",
+      "scenario_name": "10431A1_R18",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 0,
+      "r18": 1,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "",
+            "m_walletName": "",
+            "m_count": 0
+          }
+        ]
+      },
+      "requireItemCategory": "",
+      "requireItemName": "",
+      "unlockLevel": 0,
+      "shopId": 0
+    },
+    {
+      "id": 1043103,
+      "story_category": 4,
+      "story_id": "431",
+      "title": "心のゆとり",
+      "chapter_name": "character",
+      "scenario_name": "10431B0_Nml",
+      "next_id": 1043104,
+      "next_view_id": 0,
+      "view_priority": 0,
+      "r18": 0,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "point",
+            "m_walletName": "free_coin",
+            "m_count": 50
+          }
+        ]
+      },
+      "requireItemCategory": "",
+      "requireItemName": "",
+      "unlockLevel": 60,
+      "shopId": 0
+    },
+    {
+      "id": 1043104,
+      "story_category": 4,
+      "story_id": "431",
+      "title": "心のゆとり",
+      "chapter_name": "character",
+      "scenario_name": "10431B1_R18",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 0,
+      "r18": 1,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "",
+            "m_walletName": "",
+            "m_count": 0
+          }
+        ]
+      },
+      "requireItemCategory": "",
+      "requireItemName": "",
+      "unlockLevel": 0,
+      "shopId": 0
+    },
+    {
+      "id": 1040801,
+      "story_category": 4,
+      "story_id": "408",
+      "title": "聖なるマッサージ祈祷",
+      "chapter_name": "character",
+      "scenario_name": "10408A0_Nml",
+      "next_id": 1040802,
+      "next_view_id": 1040803,
+      "view_priority": 0,
+      "r18": 0,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "point",
+            "m_walletName": "free_coin",
+            "m_count": 50
+          }
+        ]
+      },
+      "requireItemCategory": "",
+      "requireItemName": "",
+      "unlockLevel": 15,
+      "shopId": 0
+    },
+    {
+      "id": 1040802,
+      "story_category": 4,
+      "story_id": "408",
+      "title": "聖なるマッサージ祈祷",
+      "chapter_name": "character",
+      "scenario_name": "10408A1_R18",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 0,
+      "r18": 1,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "",
+            "m_walletName": "",
+            "m_count": 0
+          }
+        ]
+      },
+      "requireItemCategory": "",
+      "requireItemName": "",
+      "unlockLevel": 0,
+      "shopId": 0
+    },
+    {
+      "id": 1040803,
+      "story_category": 4,
+      "story_id": "408",
+      "title": "ガイア式・島民健康祈願",
+      "chapter_name": "character",
+      "scenario_name": "10408B0_Nml",
+      "next_id": 1040804,
+      "next_view_id": 0,
+      "view_priority": 0,
+      "r18": 0,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "point",
+            "m_walletName": "free_coin",
+            "m_count": 50
+          }
+        ]
+      },
+      "requireItemCategory": "",
+      "requireItemName": "",
+      "unlockLevel": 60,
+      "shopId": 0
+    },
+    {
+      "id": 1040804,
+      "story_category": 4,
+      "story_id": "408",
+      "title": "ガイア式・島民健康祈願",
+      "chapter_name": "character",
+      "scenario_name": "10408B1_R18",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 0,
+      "r18": 1,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "",
+            "m_walletName": "",
+            "m_count": 0
+          }
+        ]
+      },
+      "requireItemCategory": "",
+      "requireItemName": "",
+      "unlockLevel": 0,
+      "shopId": 0
+    },
+    {
+      "id": 1041401,
+      "story_category": 4,
+      "story_id": "414",
+      "title": "スゴい発明",
+      "chapter_name": "character",
+      "scenario_name": "10414A0_Nml",
+      "next_id": 1041402,
+      "next_view_id": 1041403,
+      "view_priority": 0,
+      "r18": 0,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "point",
+            "m_walletName": "free_coin",
+            "m_count": 50
+          }
+        ]
+      },
+      "requireItemCategory": "",
+      "requireItemName": "",
+      "unlockLevel": 15,
+      "shopId": 0
+    },
+    {
+      "id": 1041402,
+      "story_category": 4,
+      "story_id": "414",
+      "title": "スゴい発明",
+      "chapter_name": "character",
+      "scenario_name": "10414A1_R18",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 0,
+      "r18": 1,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "",
+            "m_walletName": "",
+            "m_count": 0
+          }
+        ]
+      },
+      "requireItemCategory": "",
+      "requireItemName": "",
+      "unlockLevel": 0,
+      "shopId": 0
+    },
+    {
+      "id": 1041403,
+      "story_category": 4,
+      "story_id": "414",
+      "title": "広い世界",
+      "chapter_name": "character",
+      "scenario_name": "10414B0_Nml",
+      "next_id": 1041404,
+      "next_view_id": 0,
+      "view_priority": 0,
+      "r18": 0,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "point",
+            "m_walletName": "free_coin",
+            "m_count": 50
+          }
+        ]
+      },
+      "requireItemCategory": "",
+      "requireItemName": "",
+      "unlockLevel": 60,
+      "shopId": 0
+    },
+    {
+      "id": 1041404,
+      "story_category": 4,
+      "story_id": "414",
+      "title": "広い世界",
+      "chapter_name": "character",
+      "scenario_name": "10414B1_R18",
       "next_id": 0,
       "next_view_id": 0,
       "view_priority": 0,

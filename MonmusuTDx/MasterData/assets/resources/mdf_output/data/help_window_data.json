@@ -1079,6 +1079,30 @@
       "body": "\r\n<align=\"center\"><size=30>ジェレゾンネ・ビット</size></align>\r\n{\"local_image\":\"HelpWindow/boss/ZhelezonneBit.png\"}\r\n<align=\"center\"><size=23>常に味方ユニットの遠距離攻撃を引き付けます。\r\n\r\n存在する限り、業炎金球ジェレゾンネの受けるダメージを\r\n50％減少します。\r\n\r\n一定時間が経過すると、自爆して周囲の味方ユニットに\r\n大ダメージを与えて火傷を付与します。\r\n\r\n自爆する前に倒すと、周囲の味方ユニットの火傷状態を回復します。\r\n\r\nHPが一定まで減少すると、攻撃を受けた時に\r\n一度だけ攻撃したユニットにスタン値（大）を付与します。\r\n</size></align>\r\n　"
     },
     {
+      "id": 10286,
+      "helpId": "boss_kumasanBabumiEX",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>超融合宇宙生命体ＢＡＢＵＭＩクマロボ</size></align>\r\n{\"local_image\":\"HelpWindow/boss/BabumiKumaRobo.png\"}\r\n<align=\"center\"><size=23><color=#F08080>・一定時間が経過する毎に、寄生生命体BABUMIを召喚します。</color>\r\n\r\n・3ブロック以上のユニットでのみブロックできます。\r\n\r\n・一定時間が経過する毎に、自身以外の全エネミーのHPを50％回復します。\r\n\r\n・体力が一定数減少する毎に、物理ダメージのジャンプ攻撃を行います。\r\nその後ランダムな位置に低威力の魔法ダメージの水滴を落とします。</size></align>\r\n\r\n"
+    },
+    {
+      "id": 10287,
+      "helpId": "boss_KiseiBabumi",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>寄生生命体ＢＡＢＵＭＩ</size></align>\r\n{\"local_image\":\"HelpWindow/boss/Babumi.png\"}\r\n<align=\"center\"><size=23>・超融合宇宙生命体ＢＡＢＵＭＩクマロボがジャンプ攻撃を行うと\r\n自身の周囲に攻撃力500％分の魔法ダメージを与えます。\r\n\r\n・攻撃を与えたユニットの攻撃速度を減少します。\r\n</size></align>\r\n\r\n"
+    },
+    {
+      "id": 10288,
+      "helpId": "boss_kumasanBabumiHelpEX",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>超融合宇宙生命体ＢＡＢＵＭＩクマロボ</size></align>\r\n{\"local_image\":\"HelpWindow/boss/BabumiKumaRobo.png\"}\r\n<align=\"center\"><size=23><color=#F08080>・一定時間が経過する毎に、寄生生命体BABUMIを召喚します。</color>\r\n\r\n・3ブロック以上のユニットでのみブロックできます。\r\n\r\n・一定時間が経過する毎に、自身以外の全エネミーのHPを50％回復します。\r\n\r\n・体力が一定数減少する毎に、物理ダメージのジャンプ攻撃を行います。\r\nその後ランダムな位置に低威力の魔法ダメージの水滴を落とします。</size></align>\r\n\r\n<align=\"center\"><size=30>寄生生命体ＢＡＢＵＭＩ</size></align>\r\n{\"local_image\":\"HelpWindow/boss/Babumi.png\"}\r\n<align=\"center\"><size=23>・超融合宇宙生命体ＢＡＢＵＭＩクマロボがジャンプ攻撃を行うと\r\n自身の周囲に攻撃力500％分の魔法ダメージを与えます。\r\n\r\n・攻撃を与えたユニットの攻撃速度を減少します。\r\n</size></align>\r\n\r\n"
+    },
+    {
+      "id": 10289,
+      "helpId": "boss_kumasanBabumi",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>超融合宇宙生命体ＢＡＢＵＭＩクマロボ</size></align>\r\n{\"local_image\":\"HelpWindow/boss/BabumiKumaRobo.png\"}\r\n<align=\"center\"><size=23>・3ブロック以上のユニットでのみブロックできます。\r\n\r\n・一定時間が経過する毎に、自身以外の全エネミーのHPを50％回復します。\r\n\r\n・体力が一定数減少する毎に、物理ダメージのジャンプ攻撃を行います。\r\nその後ランダムな位置に低威力の魔法ダメージの水滴を落とします。</size></align>\r\n\r\n"
+    },
+    {
       "id": 30000,
       "helpId": "event_0220328_M1",
       "title": "バトルヒント",
@@ -4631,6 +4655,48 @@
       "body": "\r\n<align=\"center\"><size=30>魔術師（猛者）</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability_monster/mosa_magic.png\"}\r\n\r\n<align=\"center\"><size=25>３体同時に攻撃を行いスタン値(小)を蓄積します。\r\nスタン状態の味方へ与えるダメージが100％上昇します。\r\n一定回数攻撃するたびに射程内の全ての味方ユニットを同時に攻撃します。\r\n\r\nHPが半減すると受ける魔法ダメージを80％減少し、攻撃によるスタン値の\r\n蓄積値が上昇します。\r\n</size></align>\r\n"
     },
     {
+      "id": 30595,
+      "helpId": "event_260414_EX3",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>ハイプリースト</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability/highpriest.png\"}\r\n<align=\"center\"><size=25>範囲内のエネミーを複数体同時に回復します。</size></align>\r\n\r\n<align=\"center\"><size=25>範囲内にいる自身を除くエネミーの\r\n攻撃力、物理防御力を100％上昇させます。</size></align>\r\n\r\n<align=\"center\"><size=30>レッドアーチャー（男）</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability/RedArcher.png\"}\r\n\r\n<align=\"center\"><size=25>常に２連射攻撃を行います。</size></align>\r\n\r\n<align=\"center\"><size=30>戦士（猛者）</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability_monster/mosa_sensi.png\"}\r\n\r\n<align=\"center\"><size=25>2連続で攻撃し低確率で火傷状態にします。\r\n火傷のユニットへ与えるダメージが100％上昇します。\r\n一定回数攻撃するたびに攻撃力が100%上昇し、周囲の味方ユニット全てに魔法攻撃を行います。\r\n</size></align>\r\n\r\n<align=\"center\"><size=30>ダークネスメイジ（女）</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability_human/DarknessMage.png\"}\r\n\r\n<align=\"center\"><size=25>範囲魔法攻撃で、周囲の２体のユニットを同時に攻撃します。</size></align>\r\n\r\n"
+    },
+    {
+      "id": 30596,
+      "helpId": "event_260420_E1",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>【エンジェル娘】マイネートー</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability_monsterGirl/Maine-to-.png\"}\r\n<align=\"center\"><size=22>攻撃時に射程内の敵に自身の攻撃力50％分の回復を行います。\r\nHPが減少すると、射程が上昇します。\r\n</size></align>\r\n\r\n<align=\"center\"><size=30>クレイジーベア</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability_monster/Bea_2.png\"}\r\n\r\n<align=\"center\"><size=25>HPが半減すると攻撃速度が25％、\r\n移動速度200％上昇します。また遠距離攻撃を受けるたびに\r\n攻撃力が10％上昇し、10秒間物理魔法防御力が200％上昇します。</size></align>\r\n\r\n"
+    },
+    {
+      "id": 30597,
+      "helpId": "event_260420_E2",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>火闇地属性マスの効果が変化</size></align>\r\n{\"local_image\":\"HelpWindow/event/event260427.png\"}\r\n\r\n<align=\"center\"><size=23>火闇地属性マスに配置した味方ユニットの与えるダメージが\r\n2倍になります。また同属性でない場合継続ダメージを受けます。</size></align>\r\n\r\n<align=\"center\"><size=30>【ブラスドラゴン娘】セレン</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability_monsterGirl/Brassdragon.png\"}\r\n<align=\"center\"><size=25>攻撃した味方ユニットの物理防御力を低下させます。\r\n\r\nブロック中のユニットから攻撃被弾時、受けるダメージが減少します。\r\n\r\nHP減少時攻撃が変化し、範囲内の味方1体に遠距離攻撃を行い、\r\n着弾地点の周囲に持続ダメージが発生します。\r\n</size></align>\r\n\r\n"
+    },
+    {
+      "id": 30598,
+      "helpId": "event_260420_E3",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>【ポイズンスライム娘】リン</size></align>\r\n{\"local_image\":\"HelpWindow/event_20231030/10178.png\"}\r\n<align=\"center\"><size=23>物理攻撃で受けるダメージが80%軽減されます。\r\nHP半減時、射程内の味方ユニットに、自身の攻撃力の\r\n50%の継続ダメージを与えます。</size></align>\r\n\r\n<align=\"center\"><size=30>【ゴルゴーン娘】ローレン</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability_monsterGirl/GorgonGirlLauren.png\"}\r\n<align=\"center\"><size=26>攻撃した相手を一定確率で超毒・石化状態にします。\r\n石化、毒中のユニットに対して、攻撃時に対象のHP20%の\r\n追加ダメージを与えます。HPが一定減少するたびに、\r\n範囲内のユニットを石化させます。\r\n\r\nHP半減時、攻撃力が100%上昇します。\r\n</size></align>\r\n\r\n"
+    },
+    {
+      "id": 30599,
+      "helpId": "event_260420_E4",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>【ナベリウス娘】テルル</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability_monsterGirl/NaberiusuTeruru.png\"}\r\n<align=\"center\"><size=23>常に3連射で攻撃を行い、\r\n味方の攻撃力を20%減少します。\r\n\r\nHP半減時、攻撃力がわずかに下がり6連射になります。\r\nまた味方の攻撃力減少量が50%に上昇します。</size></align>\r\n\r\n<align=\"center\"><size=30>【ファイアードレイク娘】イグニ</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability_monsterGirl/FireDrakeGirlIgny.png\"}\r\n<align=\"center\"><size=26>\r\n一定時間ごとに、\r\n範囲内のユニットに自身の攻撃力割合のダメージを与えます。\r\nHP半減後、攻撃力と射程が増加し、攻撃対象数が1増加します。\r\n</size></align>\r\n\r\n"
+    },
+    {
+      "id": 30600,
+      "helpId": "event_260420_E4",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>ブラックワイバーン</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_quest/blackwyvern.png\"}\r\n<align=\"center\"><size=25>時間経過で攻撃力が増幅していきます。</size></align>\r\n\r\n<align=\"center\"><size=25>攻撃力が上がりきる前に倒してしまいましょう！</size></align>\r\n\r\n<align=\"center\"><size=30>ファイアエレメンタル</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability/Fire_elemental.png\"}\r\n\r\n<align=\"center\"><size=25>魔法への耐性が非常に高く、受ける魔法ダメージを80%減少させます。</size></align>\r\n\r\n<align=\"center\"><size=25>体が燃えているため、近くにいる味方ユニットに継続ダメージを与えます。</size></align>\r\n\r\n<align=\"center\"><size=30>マグマスライム</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability_monster/MagmaSlime.png\"}\r\n\r\n<align=\"center\"><size=25>ブロック中のユニットに対し継続ダメージを与えます。\r\n\r\n遠距離ユニットの物理攻撃を被弾するごとに物防が50％上昇します。</size></align>\r\n\r\n"
+    },
+    {
+      "id": 30601,
+      "helpId": "event_260420_EX1",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>【サンダーペガサス娘】スズ</size></align>\r\n{\"local_image\":\"HelpWindow/event_20231030/10177.png\"}\r\n<align=\"center\"><size=23>攻撃した相手にスタン値(小)を付与します。\r\nHP半減時、攻撃速度が減少し、スタン値がわずかに上昇。\r\n魔法攻撃になり、攻撃対象数4、攻撃力25%\r\n射程50%上昇します。</size></align>\r\n\r\n<align=\"center\"><size=30>ゴブリン娘（剣盾）</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability/goblingirlswordshield.png\"}\r\n\r\n<align=\"center\"><size=23>ゴブリン娘（剣盾）を遠距離攻撃で攻撃したユニットに対して、\r\nユニットの攻撃力の20%を反射します。\r\n</size></align>\r\n\r\n<align=\"center\"><size=30>オヤブンガロトラ</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability/HeadGarotora.png\"}\r\n\r\n<align=\"center\"><size=25>攻撃時に一定の確率で毒状態にし、毒状態のユニットに攻撃時\r\nユニットの最大HPの１５％分を追加ダメージとして与えます。</size></align>\r\n\r\n"
+    },
+    {
       "id": 20001,
       "helpId": "enemy_ability_ghost",
       "title": "バトルヒント",
@@ -6356,7 +6422,7 @@
       "id": 20296,
       "helpId": "enemy_ability_OriginTarosu_chi",
       "title": "バトルヒント",
-      "body": "\r\n<align=\"center\"><size=30>ターロス（地原種）</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability/OriginTarosu_chi.png\"}\r\n\r\n<align=\"center\"><size=25>非ブロック中は岩を投げる遠距離攻撃を行い\r\nブロック中は剣を用いた近接攻撃を行います。\r\n\r\n一定回数【ターロス（地原種）】の攻撃を受けるとスタン状態になります。\r\n\r\nＨＰが減少すると一定近接攻撃毎に範囲攻撃を行います。</size></align>\r\n　"
+      "body": "\r\n<align=\"center\"><size=30>ターロス（地原種）</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability/OriginTarosu_chi.png\"}\r\n\r\n<align=\"center\"><size=25>非ブロック中は岩を投げる遠距離攻撃を行い\r\nブロック中は剣を用いた近接攻撃を行います。\r\n\r\n一定回数、ターロス（地原種）の攻撃を受けるとスタン状態になります。\r\n\r\nＨＰが減少すると一定近接攻撃毎に範囲攻撃を行います。</size></align>\r\n　"
     },
     {
       "id": 20297,
@@ -9825,6 +9891,54 @@
       "helpId": "enemy_ability_babykumarobo",
       "title": "バトルヒント",
       "body": "\r\n<align=\"center\"><size=30>赤ちゃんクマロボ</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability/babykumarobo.png\"}\r\n<align=\"center\"><size=25>敵のくまロボの数に応じて赤ちゃんクマロボの\r\n攻撃力、物理防御、魔法防御が上昇します。\r\n(9体で最大250％上昇)</size></align>\r\n\r\n"
+    },
+    {
+      "id": 20875,
+      "helpId": "enemy_ability_GnormuPetora",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>【ガーデンノーム娘】ペトラ</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability_monsterGirl/GnormuPetora.png\"}\r\n<align=\"center\"><size=23>自身を除く敵の攻撃力、物理防御、魔法防御を\r\n25%上昇し、HP3%のリジェネを効果を付与します。\r\nまた範囲内の味方の攻撃力を20％減少します。\r\n\r\nHP半減後は、リジェネの効果量が6%に上昇します。</size></align>\r\n\r\n"
+    },
+    {
+      "id": 20876,
+      "helpId": "enemy_ability_ThundearSuzu2",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>【サンダーペガサス娘】スズ</size></align>\r\n{\"local_image\":\"HelpWindow/event_20231030/10177.png\"}\r\n<align=\"center\"><size=23>攻撃した相手にスタン値(小)を付与します。\r\nHP半減時、攻撃速度が減少し、スタン値がわずかに上昇。\r\n魔法攻撃になり、攻撃対象数4、攻撃力25%\r\n射程50%上昇します。</size></align>\r\n"
+    },
+    {
+      "id": 20877,
+      "helpId": "enemy_ability_NaberiusuTeruru",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>【ナベリウス娘】テルル</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability_monsterGirl/NaberiusuTeruru.png\"}\r\n<align=\"center\"><size=23>常に3連射で攻撃を行い、\r\n味方の攻撃力を20%減少します。\r\n\r\nHP半減時、攻撃力がわずかに下がり6連射になります。\r\nまた味方の攻撃力減少量が50%に上昇します。</size></align>\r\n\r\n"
+    },
+    {
+      "id": 20878,
+      "helpId": "enemy_ability_PoisonRin",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>【ポイズンスライム娘】リン</size></align>\r\n{\"local_image\":\"HelpWindow/event_20231030/10178.png\"}\r\n<align=\"center\"><size=23>物理攻撃で受けるダメージが80%軽減されます。\r\nHP半減時、射程内の味方ユニットに、自身の攻撃力の\r\n50%の継続ダメージを与えます。</size></align>\r\n\r\n"
+    },
+    {
+      "id": 20879,
+      "helpId": "enemy_ability_GorgonGirlLauren2",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>【ゴルゴーン娘】ローレン</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability_monsterGirl/GorgonGirlLauren.png\"}\r\n<align=\"center\"><size=26>攻撃した相手を一定確率で超毒・石化状態にします。\r\n石化、毒中のユニットに対して、攻撃時に対象のHP20%の\r\n追加ダメージを与えます。HPが一定減少するたびに、\r\n範囲内のユニットを石化させます。\r\n\r\nHP半減時、攻撃力が100%上昇します。\r\n</size></align>\r\n"
+    },
+    {
+      "id": 20880,
+      "helpId": "enemy_ability_Kaputochi",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>カトブレパス（地原種）</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability_monster/Kaputochi.png\"}\r\n\r\n<align=\"center\"><size=25>３ブロック以上のユニットでのみブロックすることができます。\r\n\r\n一定時間ごとに周囲のユニットにダメージを与えます。\r\n\r\nHPが減少すると、自身を中心に超猛毒と石化状態を付与する\r\nダメージフィールドを発生させます。</size></align>\r\n\r\n"
+    },
+    {
+      "id": 20881,
+      "helpId": "enemy_ability_Cockatrice",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>コカトリス（原種）</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability_monster/Cockatrice.png\"}\r\n\r\n<align=\"center\"><size=25>非ブロック中は遠距離範囲攻撃を行い、\r\n攻撃した相手に確率で石化状態を付与します。\r\n\r\nブロック中は確率で追加攻撃が発生し、\r\n最後の攻撃は確定で猛毒状態にします。\r\n\r\n毒または石化状態の相手に与えるダメージが1.3倍になります。</size></align>\r\n\r\n"
+    },
+    {
+      "id": 20882,
+      "helpId": "enemy_ability_Troll",
+      "title": "バトルヒント",
+      "body": "\r\n<align=\"center\"><size=30>トロール（原種）</size></align>\r\n{\"local_image\":\"HelpWindow/enemy_ability_monster/Troll.png\"}\r\n\r\n<align=\"center\"><size=25>非ブロック中、一定時間ごとに自身の周囲に範囲物理攻撃を行い、\r\nスタン値（大）を付与します。\r\n\r\nブロック中、3回攻撃するごとに物理攻撃を行い、\r\n相手のHPが70％以下の場合、吹き飛ばします。</size></align>\r\n\r\n"
     },
     {
       "id": 40000,

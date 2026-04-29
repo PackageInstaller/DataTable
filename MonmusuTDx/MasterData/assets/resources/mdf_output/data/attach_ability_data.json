@@ -23151,6 +23151,873 @@
       "hidden": 0,
       "category": 2,
       "start_at": ""
+    },
+    {
+      "id": 1269,
+      "rarity": 1397969457,
+      "name": "撤退時コスト回復 IV",
+      "kana": "てったいじこすとかいふく4",
+      "text": "撤退時のコスト回復量が100%になる",
+      "restrictionForClass": 0,
+      "restrictionForTribe": 0,
+      "restrictionForElement": 0,
+      "restrictionForFamily": 0,
+      "talentList": [
+        {
+          "talentId": 1001,
+          "param": [
+            {
+              "num": [
+                100
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "recipeId": 0,
+      "skipend": 0,
+      "salePrice": 0,
+      "salable": 0,
+      "purchase": 1,
+      "ultimate": 0,
+      "hidden": 0,
+      "category": 3,
+      "start_at": ""
+    },
+    {
+      "id": 1270,
+      "rarity": 1397969457,
+      "name": "攻撃+物理防御強化II",
+      "kana": "こうげきりょくぼうぎょりょくきょうか2",
+      "text": "攻撃力と物理防御力+22％",
+      "restrictionForClass": 0,
+      "restrictionForTribe": 0,
+      "restrictionForElement": 0,
+      "restrictionForFamily": 0,
+      "talentList": [
+        {
+          "talentId": 6,
+          "param": [
+            {
+              "num": [
+                22
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 23,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 11,
+          "param": [
+            {
+              "num": [
+                22
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 23,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "recipeId": 0,
+      "skipend": 0,
+      "salePrice": 0,
+      "salable": 0,
+      "purchase": 1,
+      "ultimate": 0,
+      "hidden": 0,
+      "category": 1,
+      "start_at": ""
+    },
+    {
+      "id": 1271,
+      "rarity": 1397969457,
+      "name": "うらみつらみ",
+      "kana": "うらみつらみ",
+      "text": "再出撃までの時間を40%短縮(重複不可)\r\n自身の死亡時、敵全員の受けるダメージを10秒間1.2倍にする",
+      "restrictionForClass": 0,
+      "restrictionForTribe": 0,
+      "restrictionForElement": 0,
+      "restrictionForFamily": 0,
+      "talentList": [
+        {
+          "talentId": 1008,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            },
+            {
+              "num": [
+                300
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 8,
+          "range": 6,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 1010,
+          "param": [
+            {
+              "num": [
+                120
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 40000,
+              "num": [
+                1
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 1053,
+          "param": [
+            {
+              "num": [
+                10020
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 40000,
+              "num": [
+                1
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 1080,
+          "param": [
+            {
+              "num": [
+                40
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "recipeId": 0,
+      "skipend": 0,
+      "salePrice": 0,
+      "salable": 0,
+      "purchase": 1,
+      "ultimate": 0,
+      "hidden": 0,
+      "category": 3,
+      "start_at": ""
+    },
+    {
+      "id": 1272,
+      "rarity": 1397969457,
+      "name": "俺に触れると火傷するぜ",
+      "kana": "おれにふれるとやけどするぜ",
+      "text": "被弾時に相手を確率で火傷状態にする\r\n火傷状態の相手から受ける物理ダメージを40％軽減する",
+      "restrictionForClass": 0,
+      "restrictionForTribe": 0,
+      "restrictionForElement": 0,
+      "restrictionForFamily": 0,
+      "talentList": [
+        {
+          "talentId": 1010,
+          "param": [
+            {
+              "num": [
+                60
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 3,
+          "range": 1,
+          "triggerData": [],
+          "activeData": [
+            {
+              "type": 31,
+              "num": [
+                1
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            },
+            {
+              "type": 7,
+              "num": [
+                1
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ]
+        },
+        {
+          "talentId": 522,
+          "param": [
+            {
+              "num": [
+                40
+              ]
+            },
+            {
+              "num": [
+                10
+              ]
+            },
+            {
+              "num": [
+                900
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 3,
+          "range": 4,
+          "triggerData": [],
+          "activeData": [
+            {
+              "type": 10,
+              "num": [
+                0
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ]
+        }
+      ],
+      "recipeId": 0,
+      "skipend": 0,
+      "salePrice": 0,
+      "salable": 0,
+      "purchase": 1,
+      "ultimate": 0,
+      "hidden": 0,
+      "category": 2,
+      "start_at": ""
+    },
+    {
+      "id": 1273,
+      "rarity": 1397969457,
+      "name": "アースエクステンド",
+      "kana": "あぁすえくすてんど",
+      "text": "編成時地属性モンスター娘のHPと攻撃力+10%",
+      "restrictionForClass": 0,
+      "restrictionForTribe": 0,
+      "restrictionForElement": 0,
+      "restrictionForFamily": 0,
+      "talentList": [
+        {
+          "talentId": 6,
+          "param": [
+            {
+              "num": [
+                10
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 4,
+          "range": 3,
+          "triggerData": [],
+          "activeData": [
+            {
+              "type": 1002,
+              "num": [
+                7
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ]
+        },
+        {
+          "talentId": 1,
+          "param": [
+            {
+              "num": [
+                10
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 4,
+          "range": 3,
+          "triggerData": [],
+          "activeData": [
+            {
+              "type": 1002,
+              "num": [
+                7
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ]
+        }
+      ],
+      "recipeId": 0,
+      "skipend": 0,
+      "salePrice": 0,
+      "salable": 0,
+      "purchase": 1,
+      "ultimate": 0,
+      "hidden": 0,
+      "category": 1,
+      "start_at": ""
+    },
+    {
+      "id": 1274,
+      "rarity": 1397969457,
+      "name": "ウィルオウィスプソウル",
+      "kana": "うぃるおうぃすぷそうる",
+      "text": "味方死亡時に敵全体の物防魔防10秒間-5％\r\nウィルオウィスプ(原種)をトークンとして使役可能\r\n（元々トークン所持している場合は無効）",
+      "restrictionForClass": 0,
+      "restrictionForTribe": 0,
+      "restrictionForElement": 0,
+      "restrictionForFamily": 0,
+      "talentList": [
+        {
+          "talentId": 1016,
+          "param": [
+            {
+              "num": [
+                126
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 1008,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 3,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 12,
+          "param": [
+            {
+              "num": [
+                5
+              ]
+            },
+            {
+              "num": [
+                300
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                10020
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 8,
+          "range": 6,
+          "triggerData": [
+            {
+              "type": 40000,
+              "num": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "option": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 17,
+          "param": [
+            {
+              "num": [
+                5
+              ]
+            },
+            {
+              "num": [
+                300
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 8,
+          "range": 6,
+          "triggerData": [
+            {
+              "type": 40000,
+              "num": [
+                1,
+                1,
+                1
+              ],
+              "option": [
+                "",
+                "",
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        }
+      ],
+      "recipeId": 0,
+      "skipend": 0,
+      "salePrice": 0,
+      "salable": 0,
+      "purchase": 1,
+      "ultimate": 0,
+      "hidden": 0,
+      "category": 1,
+      "start_at": ""
+    },
+    {
+      "id": 1275,
+      "rarity": 1397969457,
+      "name": "4th Anniversaryの寵愛",
+      "kana": "ふぉーすあにばさーさりーのちょうあい",
+      "text": "自身の出撃コスト-4\r\nスキル初回発動と再発動までの時間を4秒短縮",
+      "restrictionForClass": 0,
+      "restrictionForTribe": 0,
+      "restrictionForElement": 0,
+      "restrictionForFamily": 0,
+      "talentList": [
+        {
+          "talentId": 1081,
+          "param": [
+            {
+              "num": [
+                120
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 1081,
+          "param": [
+            {
+              "num": [
+                120
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 13,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 60,
+          "param": [
+            {
+              "num": [
+                4
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 23,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "recipeId": 0,
+      "skipend": 0,
+      "salePrice": 0,
+      "salable": 0,
+      "purchase": 1,
+      "ultimate": 0,
+      "hidden": 0,
+      "category": 3,
+      "start_at": ""
+    },
+    {
+      "id": 1276,
+      "rarity": 1397969457,
+      "name": "カウンターパーティー",
+      "kana": "かうんたぁぱぁてぃ",
+      "text": "自身の出撃コスト-10\r\n自身配置後、10秒間コスト回復速度が半減",
+      "restrictionForClass": 0,
+      "restrictionForTribe": 0,
+      "restrictionForElement": 0,
+      "restrictionForFamily": 0,
+      "talentList": [
+        {
+          "talentId": 1008,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            },
+            {
+              "num": [
+                300
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 5,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 1003,
+          "param": [
+            {
+              "num": [
+                -50
+              ]
+            },
+            {
+              "num": [
+                10
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 40000,
+              "num": [
+                1
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 60,
+          "param": [
+            {
+              "num": [
+                10
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 23,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "recipeId": 0,
+      "skipend": 0,
+      "salePrice": 0,
+      "salable": 0,
+      "purchase": 1,
+      "ultimate": 0,
+      "hidden": 0,
+      "category": 3,
+      "start_at": ""
     }
   ]
 }

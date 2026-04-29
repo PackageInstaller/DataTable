@@ -618,5 +618,35 @@
         "trigger_param2": "0",
         "skill_types": "2|3",
         "description": "シールド付与時"
+    },
+    {
+        "id": 10690,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 69,
+        "trigger_param2": "0",
+        "skill_types": "2|3",
+        "description": "効果マス付与時"
+    },
+    {
+        "id": 10710,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 71,
+        "trigger_param2": "0",
+        "skill_types": "2|3",
+        "description": "ボス威力補正発生時"
+    },
+    {
+        "id": 10770,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 77,
+        "trigger_param2": "0",
+        "skill_types": "2",
+        "description": "スキル変化時"
     }
 ]

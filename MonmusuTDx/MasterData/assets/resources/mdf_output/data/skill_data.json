@@ -52649,7 +52649,7 @@
     {
       "id": 177,
       "name": "お姉ちゃんサンダー！",
-      "text": "[duration]秒、攻撃力[MAG,0,0]倍、射程[MAG,1,0]倍、\r\n攻撃対象数+[0,3,0]\r\n敵の防御力を無視する\r\n攻撃敵数が1体の場合与えるダメージ1.1倍",
+      "text": "[duration]秒、攻撃力[MAG,0,0]倍、射程[MAG,1,0]倍、\r\n攻撃対象数+[0,3,0]\r\n敵の防御力を無視し、攻撃敵数が4体以下の場合ダメージ上昇(最大1.4倍)",
       "maxLevel": 5,
       "minCoolTime": 1320,
       "maxCoolTime": 1200,
@@ -52804,6 +52804,126 @@
             {
               "num": [
                 110
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 2012,
+              "num": [
+                4
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 1009,
+          "param": [
+            {
+              "num": [
+                120
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 2012,
+              "num": [
+                3
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 1009,
+          "param": [
+            {
+              "num": [
+                130
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 2012,
+              "num": [
+                2
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 1009,
+          "param": [
+            {
+              "num": [
+                140
               ]
             }
           ],
@@ -54394,80 +54514,6 @@
       ],
       "isInvalidAutoSkill": 0,
       "recipeId": 46,
-      "overChargeSkillId": 0,
-      "add_max_level": 0
-    },
-    {
-      "id": 186,
-      "name": "ダミー",
-      "text": "ダミー",
-      "maxLevel": 5,
-      "minCoolTime": 1020,
-      "maxCoolTime": 900,
-      "minDurationTime": 600,
-      "maxDurationTime": 600,
-      "minCost": 0,
-      "maxCost": 0,
-      "talentList": [
-        {
-          "talentId": 6,
-          "param": [
-            {
-              "num": [
-                100
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                140
-              ]
-            }
-          ],
-          "addMaxParam": [
-            {
-              "num": [
-                0
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        },
-        {
-          "talentId": 6,
-          "param": [
-            {
-              "num": [
-                10
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                20
-              ]
-            }
-          ],
-          "addMaxParam": [
-            {
-              "num": [
-                0
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "isInvalidAutoSkill": 0,
-      "recipeId": 42,
       "overChargeSkillId": 0,
       "add_max_level": 0
     },
@@ -56701,7 +56747,7 @@
     {
       "id": 210,
       "name": "乱れ撃つわん！",
-      "text": "[duration]秒攻撃力[MAG,0,0]倍、射程[MAG,1,0]倍\r\n攻撃後の待ち時間を短縮し、6連続攻撃\r\n攻撃が必中になり敵の回避効果を無視する",
+      "text": "[duration]秒攻撃力[MAG,0,0]倍、射程[MAG,1,0]倍\r\n攻撃間隔が大幅に減少し、6連続攻撃\r\n攻撃が必中になり敵の回避効果を無視する",
       "maxLevel": 5,
       "minCoolTime": 1170,
       "maxCoolTime": 1050,
@@ -56715,14 +56761,14 @@
           "param": [
             {
               "num": [
-                60
+                80
               ]
             }
           ],
           "maxParam": [
             {
               "num": [
-                80
+                100
               ]
             }
           ],
@@ -56771,7 +56817,7 @@
           "param": [
             {
               "num": [
-                5
+                0
               ]
             }
           ],
@@ -56792,19 +56838,7 @@
           "timing": 1,
           "range": 1,
           "triggerData": [],
-          "activeData": [
-            {
-              "type": 1011,
-              "num": [
-                8
-              ],
-              "option": [
-                ""
-              ],
-              "target": 1,
-              "targetNum": []
-            }
-          ]
+          "activeData": []
         },
         {
           "talentId": 1119,
@@ -66947,7 +66981,7 @@
     {
       "id": 255,
       "name": "リリステンプテーション",
-      "text": "敵全てを3秒停止させる\r\n[duration]秒、攻撃力[MAG,0,0]倍上昇、射程[MAG,1,0]倍\r\n範囲内の敵全てを攻撃",
+      "text": "[duration]秒、攻撃力[MAG,0,0]倍上昇、射程[MAG,1,0]倍\r\n発動時、敵全てを3秒停止させる\r\nその後、全ての敵の受ける魔法ダメージを1.5倍にし、射程内の敵全てを攻撃",
       "maxLevel": 5,
       "minCoolTime": 1020,
       "maxCoolTime": 900,
@@ -67095,6 +67129,86 @@
           ],
           "timing": 1,
           "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 1010,
+          "param": [
+            {
+              "num": [
+                150
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 40000,
+              "num": [
+                1
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": [
+            {
+              "type": 8,
+              "num": [
+                1
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ]
+        },
+        {
+          "talentId": 1008,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 6,
           "triggerData": [],
           "activeData": []
         }
@@ -67578,7 +67692,7 @@
     {
       "id": 258,
       "name": "ゴルゴーンサクセサー",
-      "text": "発動時に範囲内の敵を超毒・石化状態にする\r\nその後[duration]秒、射程[MAG,1,0]倍で3連攻撃\r\n毒・石化状態の敵への攻撃が防御力を無視",
+      "text": "発動時、範囲内の敵を超毒/石化状態にする\r\nその後[duration]秒、射程[MAG,1,0]倍で3連攻撃\r\n毒/石化状態の敵への攻撃が防御力を無視",
       "maxLevel": 5,
       "minCoolTime": 1170,
       "maxCoolTime": 1050,
@@ -68235,8 +68349,8 @@
       "name": "裂糸の挟撃",
       "text": "[duration]秒、攻撃力[MAG,0,0]倍、射程が増加し周囲の全敵に4連続攻撃\r\n敵撃破時に基本攻撃力200%分のバリアを自身に付与",
       "maxLevel": 5,
-      "minCoolTime": 1320,
-      "maxCoolTime": 1200,
+      "minCoolTime": 1020,
+      "maxCoolTime": 900,
       "minDurationTime": 600,
       "maxDurationTime": 600,
       "minCost": 0,
@@ -68407,7 +68521,7 @@
             },
             {
               "num": [
-                450
+                600
               ]
             }
           ],
@@ -77155,8 +77269,8 @@
       "name": "サイレントナイト",
       "text": "[duration]秒、攻撃力[MAG,0,0]倍\r\nスキル開始時にHPが1%になり、スキル中はHP回復効果を受けられない\r\n終了時にHPが50％になる",
       "maxLevel": 5,
-      "minCoolTime": 1320,
-      "maxCoolTime": 1200,
+      "minCoolTime": 1020,
+      "maxCoolTime": 900,
       "minDurationTime": 900,
       "maxDurationTime": 900,
       "minCost": 0,
@@ -107638,30 +107752,213 @@
       "add_max_level": 0
     },
     {
-      "id": 408,
-      "name": "ダミー",
-      "text": "ダミー",
-      "maxLevel": 1,
-      "minCoolTime": 1020,
-      "maxCoolTime": 900,
+      "id": 186,
+      "name": "デモンソーサリー",
+      "text": "即座にコストが[0,0,0]回復し、配置中のマスが闇属性マスに変化、その後[duration]秒、射程[MAG,1,0]倍に増加し、敵3体に遠距離魔法範囲攻撃を行う\r\n",
+      "maxLevel": 5,
+      "minCoolTime": 1170,
+      "maxCoolTime": 1050,
       "minDurationTime": 600,
       "maxDurationTime": 600,
       "minCost": 0,
       "maxCost": 0,
       "talentList": [
         {
-          "talentId": 6,
+          "talentId": 1005,
           "param": [
             {
               "num": [
-                10
+                20
               ]
             }
           ],
           "maxParam": [
             {
               "num": [
-                20
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 36,
+          "param": [
+            {
+              "num": [
+                200
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                240
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 72,
+          "param": [
+            {
+              "num": [
+                2
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 69,
+          "param": [
+            {
+              "num": [
+                6
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 71,
+          "param": [
+            {
+              "num": [
+                3
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 1118,
+          "param": [
+            {
+              "num": [
+                6
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 49,
+          "param": [
+            {
+              "num": [
+                3
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
               ]
             }
           ],
@@ -107679,35 +107976,35 @@
         }
       ],
       "isInvalidAutoSkill": 0,
-      "recipeId": 42,
+      "recipeId": 46,
       "overChargeSkillId": 0,
       "add_max_level": 0
     },
     {
-      "id": 414,
-      "name": "ダミー",
-      "text": "ダミー",
-      "maxLevel": 1,
-      "minCoolTime": 1020,
-      "maxCoolTime": 900,
-      "minDurationTime": 600,
-      "maxDurationTime": 600,
+      "id": 408,
+      "name": "岩塵竜砂",
+      "text": "[duration]秒、最大HP[MAG,0,0]倍、攻撃力[MAG,1,0]倍、射程[MAG,2,0]倍、回復対象数+[0,3,0]\r\n自身を除く全味方の物理/魔法ダメージを30％軽減する",
+      "maxLevel": 5,
+      "minCoolTime": 870,
+      "maxCoolTime": 750,
+      "minDurationTime": 1500,
+      "maxDurationTime": 1500,
       "minCost": 0,
       "maxCost": 0,
       "talentList": [
         {
-          "talentId": 6,
+          "talentId": 1,
           "param": [
             {
               "num": [
-                10
+                40
               ]
             }
           ],
           "maxParam": [
             {
               "num": [
-                20
+                80
               ]
             }
           ],
@@ -107721,6 +108018,362 @@
           "timing": 1,
           "range": 1,
           "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 6,
+          "param": [
+            {
+              "num": [
+                120
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                160
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 36,
+          "param": [
+            {
+              "num": [
+                60
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                80
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 47,
+          "param": [
+            {
+              "num": [
+                4
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 1088,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 47,
+      "overChargeSkillId": 0,
+      "add_max_level": 0
+    },
+    {
+      "id": 414,
+      "name": "叡智炎陣",
+      "text": "[duration]秒、本体と自身そっくりのトークンの攻撃力[MAG,0,0]倍、射程[MAG,1,0]倍、自身が火属性マス配置中与えるダメージが1.5倍",
+      "maxLevel": 5,
+      "minCoolTime": 1170,
+      "maxCoolTime": 1050,
+      "minDurationTime": 750,
+      "maxDurationTime": 750,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 6,
+          "param": [
+            {
+              "num": [
+                60
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                100
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 3,
+          "triggerData": [],
+          "activeData": [
+            {
+              "type": 1008,
+              "num": [
+                414
+              ],
+              "option": [
+                "|1"
+              ],
+              "target": 1,
+              "targetNum": []
+            },
+            {
+              "type": 1008,
+              "num": [
+                50151
+              ],
+              "option": [
+                "|1"
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ]
+        },
+        {
+          "talentId": 36,
+          "param": [
+            {
+              "num": [
+                30
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                50
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 3,
+          "triggerData": [],
+          "activeData": [
+            {
+              "type": 1008,
+              "num": [
+                414
+              ],
+              "option": [
+                "|1"
+              ],
+              "target": 1,
+              "targetNum": []
+            },
+            {
+              "type": 1008,
+              "num": [
+                50151
+              ],
+              "option": [
+                "|1"
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ]
+        },
+        {
+          "talentId": 1088,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 1166,
+          "param": [
+            {
+              "num": [
+                127
+              ]
+            },
+            {
+              "num": [
+                5
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 2,
+          "triggerData": [
+            {
+              "type": 40001,
+              "num": [
+                1
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            },
+            {
+              "type": 13,
+              "num": [
+                0
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
           "activeData": []
         }
       ],
@@ -107731,13 +108384,13 @@
     },
     {
       "id": 431,
-      "name": "ダミー",
-      "text": "ダミー",
+      "name": "ソウルブラスト",
+      "text": "[duration]秒、攻撃力[MAG,0,0]倍、射程[MAG,1,0]倍、攻撃対象数+5\r\nスキル発動時、全てのソウルトークンと射程内の敵の数に応じてCRI率とCRI上限+15％",
       "maxLevel": 1,
-      "minCoolTime": 1020,
-      "maxCoolTime": 900,
-      "minDurationTime": 600,
-      "maxDurationTime": 600,
+      "minCoolTime": 1320,
+      "maxCoolTime": 1200,
+      "minDurationTime": 900,
+      "maxDurationTime": 900,
       "minCost": 0,
       "maxCost": 0,
       "talentList": [
@@ -107746,14 +108399,14 @@
           "param": [
             {
               "num": [
-                10
+                20
               ]
             }
           ],
           "maxParam": [
             {
               "num": [
-                20
+                60
               ]
             }
           ],
@@ -107768,10 +108421,291 @@
           "range": 1,
           "triggerData": [],
           "activeData": []
+        },
+        {
+          "talentId": 36,
+          "param": [
+            {
+              "num": [
+                140
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                160
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 47,
+          "param": [
+            {
+              "num": [
+                5
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 1024,
+          "param": [
+            {
+              "num": [
+                100
+              ]
+            },
+            {
+              "num": [
+                3
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 3,
+          "triggerData": [
+            {
+              "type": 40001,
+              "num": [
+                1
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": [
+            {
+              "type": 1008,
+              "num": [
+                50152
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ]
+        },
+        {
+          "talentId": 1024,
+          "param": [
+            {
+              "num": [
+                10
+              ]
+            },
+            {
+              "num": [
+                3
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 5,
+          "triggerData": [
+            {
+              "type": 40001,
+              "num": [
+                1
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 1088,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
         }
       ],
       "isInvalidAutoSkill": 0,
-      "recipeId": 42,
+      "recipeId": 46,
       "overChargeSkillId": 0,
       "add_max_level": 0
     },
@@ -119660,6 +120594,80 @@
       ],
       "isInvalidAutoSkill": 0,
       "recipeId": 24,
+      "overChargeSkillId": 0,
+      "add_max_level": 0
+    },
+    {
+      "id": 50150,
+      "name": "原種の霊炎",
+      "text": "[duration]秒、攻撃力[MAG,0,0]倍、射程[MAG,1,0]倍\r\n攻撃した敵を高確率で火傷状態にする",
+      "maxLevel": 5,
+      "minCoolTime": 750,
+      "maxCoolTime": 750,
+      "minDurationTime": 600,
+      "maxDurationTime": 600,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 6,
+          "param": [
+            {
+              "num": [
+                150
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 36,
+          "param": [
+            {
+              "num": [
+                50
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 22,
       "overChargeSkillId": 0,
       "add_max_level": 0
     },

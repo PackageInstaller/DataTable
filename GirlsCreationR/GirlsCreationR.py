@@ -31,7 +31,7 @@ class Config:
         f"https://www-r18.gc.dmmgames.com/manifest/{PLATFORM}/{REGION}"
     )
     ASSET_JSON_FILES = [
-        "master.json",
+        "master.json", "advvoice.json", "assetbundle.json"
     ]  # 这里去掉了 "assetbundle.json" "advvoice.json"，有需要可以自己加上
     DOWNLOAD_DIR = "downloads"
     MASTER_DATA_DIR = "MasterData"

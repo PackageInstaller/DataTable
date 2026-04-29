@@ -1650,6 +1650,39 @@
         "description": "範囲内外問わず現在体力割合が低い味方3体"
     },
     {
+        "id": 1731,
+        "type_bits": 2,
+        "sort_type": 8,
+        "sort_param": 0,
+        "filter_type": 0,
+        "filter_param": 0,
+        "target_num": 1,
+        "ignore_range": 1,
+        "description": "範囲内外問わず現在体力割合が高い味方1体"
+    },
+    {
+        "id": 1732,
+        "type_bits": 2,
+        "sort_type": 8,
+        "sort_param": 0,
+        "filter_type": 0,
+        "filter_param": 0,
+        "target_num": 2,
+        "ignore_range": 1,
+        "description": "範囲内外問わず現在体力割合が高い味方2体"
+    },
+    {
+        "id": 1733,
+        "type_bits": 2,
+        "sort_type": 8,
+        "sort_param": 0,
+        "filter_type": 0,
+        "filter_param": 0,
+        "target_num": 3,
+        "ignore_range": 1,
+        "description": "範囲内外問わず現在体力割合が高い味方3体"
+    },
+    {
         "id": 1821,
         "type_bits": 2,
         "sort_type": 3,
@@ -2051,7 +2084,7 @@
         "sort_type": 4,
         "sort_param": 0,
         "filter_type": 1,
-        "filter_param": 3,
+        "filter_param": 1,
         "target_num": 2,
         "ignore_range": 1,
         "description": "範囲内外問わずカーマインの発動者と近い味方1体"
@@ -2062,7 +2095,7 @@
         "sort_type": 4,
         "sort_param": 0,
         "filter_type": 1,
-        "filter_param": 3,
+        "filter_param": 1,
         "target_num": 3,
         "ignore_range": 1,
         "description": "範囲内外問わずカーマインの発動者と近い味方2体"
@@ -2073,7 +2106,7 @@
         "sort_type": 4,
         "sort_param": 0,
         "filter_type": 1,
-        "filter_param": 3,
+        "filter_param": 1,
         "target_num": 4,
         "ignore_range": 1,
         "description": "範囲内外問わずカーマインの発動者と近い味方3体"
@@ -2084,7 +2117,7 @@
         "sort_type": 4,
         "sort_param": 0,
         "filter_type": 1,
-        "filter_param": 3,
+        "filter_param": 2,
         "target_num": 2,
         "ignore_range": 1,
         "description": "範囲内外問わずセルリアンの発動者と近い味方1体"
@@ -2095,7 +2128,7 @@
         "sort_type": 4,
         "sort_param": 0,
         "filter_type": 1,
-        "filter_param": 3,
+        "filter_param": 2,
         "target_num": 3,
         "ignore_range": 1,
         "description": "範囲内外問わずセルリアンの発動者と近い味方2体"
@@ -2106,7 +2139,7 @@
         "sort_type": 4,
         "sort_param": 0,
         "filter_type": 1,
-        "filter_param": 3,
+        "filter_param": 2,
         "target_num": 4,
         "ignore_range": 1,
         "description": "範囲内外問わずセルリアンの発動者と近い味方3体"
@@ -2150,7 +2183,7 @@
         "sort_type": 4,
         "sort_param": 0,
         "filter_type": 1,
-        "filter_param": 3,
+        "filter_param": 4,
         "target_num": 2,
         "ignore_range": 1,
         "description": "範囲内外問わずアイボリーの発動者と近い味方1体"
@@ -2161,7 +2194,7 @@
         "sort_type": 4,
         "sort_param": 0,
         "filter_type": 1,
-        "filter_param": 3,
+        "filter_param": 4,
         "target_num": 3,
         "ignore_range": 1,
         "description": "範囲内外問わずアイボリーの発動者と近い味方2体"
@@ -2172,7 +2205,7 @@
         "sort_type": 4,
         "sort_param": 0,
         "filter_type": 1,
-        "filter_param": 3,
+        "filter_param": 4,
         "target_num": 4,
         "ignore_range": 1,
         "description": "範囲内外問わずアイボリーの発動者と近い味方3体"
@@ -2183,7 +2216,7 @@
         "sort_type": 4,
         "sort_param": 0,
         "filter_type": 1,
-        "filter_param": 3,
+        "filter_param": 5,
         "target_num": 2,
         "ignore_range": 1,
         "description": "範囲内外問わずバイオレットの発動者と近い味方1体"
@@ -2194,7 +2227,7 @@
         "sort_type": 4,
         "sort_param": 0,
         "filter_type": 1,
-        "filter_param": 3,
+        "filter_param": 5,
         "target_num": 3,
         "ignore_range": 1,
         "description": "範囲内外問わずバイオレットの発動者と近い味方2体"
@@ -2205,10 +2238,175 @@
         "sort_type": 4,
         "sort_param": 0,
         "filter_type": 1,
-        "filter_param": 3,
+        "filter_param": 5,
         "target_num": 4,
         "ignore_range": 1,
         "description": "範囲内外問わずバイオレットの発動者と近い味方3体"
+    },
+    {
+        "id": 2311,
+        "type_bits": 2,
+        "sort_type": 4,
+        "sort_param": 0,
+        "filter_type": 1,
+        "filter_param": 1,
+        "target_num": 1,
+        "ignore_range": 1,
+        "description": "範囲内外問わずカーマインの近い味方1体"
+    },
+    {
+        "id": 2312,
+        "type_bits": 2,
+        "sort_type": 4,
+        "sort_param": 0,
+        "filter_type": 1,
+        "filter_param": 1,
+        "target_num": 2,
+        "ignore_range": 1,
+        "description": "範囲内外問わずカーマインの近い味方2体"
+    },
+    {
+        "id": 2313,
+        "type_bits": 2,
+        "sort_type": 4,
+        "sort_param": 0,
+        "filter_type": 1,
+        "filter_param": 1,
+        "target_num": 3,
+        "ignore_range": 1,
+        "description": "範囲内外問わずカーマインの近い味方3体"
+    },
+    {
+        "id": 2321,
+        "type_bits": 2,
+        "sort_type": 4,
+        "sort_param": 0,
+        "filter_type": 1,
+        "filter_param": 2,
+        "target_num": 1,
+        "ignore_range": 1,
+        "description": "範囲内外問わずセルリアンの近い味方1体"
+    },
+    {
+        "id": 2322,
+        "type_bits": 2,
+        "sort_type": 4,
+        "sort_param": 0,
+        "filter_type": 1,
+        "filter_param": 2,
+        "target_num": 2,
+        "ignore_range": 1,
+        "description": "範囲内外問わずセルリアンの近い味方2体"
+    },
+    {
+        "id": 2323,
+        "type_bits": 2,
+        "sort_type": 4,
+        "sort_param": 0,
+        "filter_type": 1,
+        "filter_param": 2,
+        "target_num": 3,
+        "ignore_range": 1,
+        "description": "範囲内外問わずセルリアンの近い味方3体"
+    },
+    {
+        "id": 2331,
+        "type_bits": 2,
+        "sort_type": 4,
+        "sort_param": 0,
+        "filter_type": 1,
+        "filter_param": 3,
+        "target_num": 1,
+        "ignore_range": 1,
+        "description": "範囲内外問わずビリジアンの近い味方1体"
+    },
+    {
+        "id": 2332,
+        "type_bits": 2,
+        "sort_type": 4,
+        "sort_param": 0,
+        "filter_type": 1,
+        "filter_param": 3,
+        "target_num": 2,
+        "ignore_range": 1,
+        "description": "範囲内外問わずビリジアンの近い味方2体"
+    },
+    {
+        "id": 2333,
+        "type_bits": 2,
+        "sort_type": 4,
+        "sort_param": 0,
+        "filter_type": 1,
+        "filter_param": 3,
+        "target_num": 3,
+        "ignore_range": 1,
+        "description": "範囲内外問わずビリジアンの近い味方3体"
+    },
+    {
+        "id": 2341,
+        "type_bits": 2,
+        "sort_type": 4,
+        "sort_param": 0,
+        "filter_type": 1,
+        "filter_param": 4,
+        "target_num": 1,
+        "ignore_range": 1,
+        "description": "範囲内外問わずアイボリーの近い味方1体"
+    },
+    {
+        "id": 2342,
+        "type_bits": 2,
+        "sort_type": 4,
+        "sort_param": 0,
+        "filter_type": 1,
+        "filter_param": 4,
+        "target_num": 2,
+        "ignore_range": 1,
+        "description": "範囲内外問わずアイボリーの近い味方2体"
+    },
+    {
+        "id": 2343,
+        "type_bits": 2,
+        "sort_type": 4,
+        "sort_param": 0,
+        "filter_type": 1,
+        "filter_param": 4,
+        "target_num": 3,
+        "ignore_range": 1,
+        "description": "範囲内外問わずアイボリーの近い味方3体"
+    },
+    {
+        "id": 2351,
+        "type_bits": 2,
+        "sort_type": 4,
+        "sort_param": 0,
+        "filter_type": 1,
+        "filter_param": 5,
+        "target_num": 1,
+        "ignore_range": 1,
+        "description": "範囲内外問わずバイオレットの近い味方1体"
+    },
+    {
+        "id": 2352,
+        "type_bits": 2,
+        "sort_type": 4,
+        "sort_param": 0,
+        "filter_type": 1,
+        "filter_param": 5,
+        "target_num": 2,
+        "ignore_range": 1,
+        "description": "範囲内外問わずバイオレットの近い味方2体"
+    },
+    {
+        "id": 2353,
+        "type_bits": 2,
+        "sort_type": 4,
+        "sort_param": 0,
+        "filter_type": 1,
+        "filter_param": 5,
+        "target_num": 3,
+        "ignore_range": 1,
+        "description": "範囲内外問わずバイオレットの近い味方3体"
     },
     {
         "id": 2301,
@@ -2341,5 +2539,16 @@
         "target_num": 3,
         "ignore_range": 1,
         "description": "範囲内外問わず入魂ゲージが一番高い味方3体"
+    },
+    {
+        "id": 9000,
+        "type_bits": 256,
+        "sort_type": 0,
+        "sort_param": 0,
+        "filter_type": 0,
+        "filter_param": 0,
+        "target_num": 0,
+        "ignore_range": 0,
+        "description": "マス効果付与"
     }
 ]
