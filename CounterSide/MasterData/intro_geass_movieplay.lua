@@ -1,0 +1,14 @@
+local L0_1, L1_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenID = 1510020
+L1_1.m_CutScenStrID = "INTRO_GEASS_MOVIEPLAY"
+L1_1.m_bWaitClick = true
+L1_1.m_fWaitTime = 0
+L1_1.m_BGFileName = "BLACK"
+L1_1.m_bFadeIn = true
+L1_1.m_fFadeTime = 0.01
+L1_1.m_StartBGMFileName = "CUTSCENE_SILENCE"
+L1_1.m_MovieName = "COLLABO_CODEGEASS_PV.mp4"
+L0_1[1] = L1_1
+m_dicNKCCutScenTempletByID = L0_1

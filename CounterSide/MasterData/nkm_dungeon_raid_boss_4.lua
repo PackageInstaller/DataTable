@@ -1,0 +1,10 @@
+local L0_1, L1_1
+L0_1 = {}
+L0_1.m_fStartCost = 10
+L0_1.m_fCostSpeedRateB = 2
+L0_1.m_BossUnitStrID = "NKM_MOB_BOSS_RAID_COMMON_RAID_BOSS_4"
+L0_1.m_fBossPosZ = 0.6
+L1_1 = {}
+L1_1.m_bShowGage = false
+L0_1.m_BossRespawnUnitTemplet = L1_1
+NKMDungeonTemplet = L0_1

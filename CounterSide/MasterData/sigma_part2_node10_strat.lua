@@ -1,0 +1,9 @@
+local L0_1, L1_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenID = 2000123
+L1_1.m_CutScenStrID = "SIGMA_PART2_NODE10_STRAT"
+L1_1.m_bWaitClick = false
+L1_1.m_fWaitTime = 0
+L0_1[1] = L1_1
+m_dicNKCCutScenTempletByID = L0_1

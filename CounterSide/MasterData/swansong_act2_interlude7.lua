@@ -1,0 +1,9 @@
+local L0_1, L1_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenID = 6800212
+L1_1.m_CutScenStrID = "SWANSONG_ACT2_INTERLUDE7"
+L1_1.m_bWaitClick = false
+L1_1.m_fWaitTime = 0
+L0_1[1] = L1_1
+m_dicNKCCutScenTempletByID = L0_1

@@ -36,3 +36,4 @@
 |  RlyehShoujotaiX  |      邪神      |            Dmm Json            |
 |  KalpaOfUniverse  |     天地劫     |            国服 Json            |
 |      DotAbyss      |      鸡渊      |            Dmm Json            |
+|    CounterSide    |     未来战     |           国际服 Lua           |

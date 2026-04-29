@@ -1,0 +1,25 @@
+local L0_1, L1_1, L2_1, L3_1
+L0_1 = {}
+L0_1.m_fStartCost = 10
+L0_1.m_fCostSpeedRateB = 2
+L0_1.m_BossUnitStrID = "NKM_MOB_BOSS_RAID_VRITRA_190"
+L0_1.m_fBossPosZ = 0.6
+L1_1 = {}
+L1_1.m_bShowGage = false
+L2_1 = {}
+L3_1 = {}
+L3_1.m_BuffStrID = "BUFF_MOB_RAID_BOSS2_PASSIVE2"
+L2_1[1] = L3_1
+L1_1.m_listStaticBuffData = L2_1
+L2_1 = {}
+L3_1 = {}
+L3_1.NST_ATK = 1.35
+L3_1.NST_DEF = 1.5
+L2_1.m_StatFactor = L3_1
+L1_1.m_AddStatData = L2_1
+L0_1.m_BossRespawnUnitTemplet = L1_1
+L1_1 = {}
+L0_1.m_listDungeonDeck = L1_1
+L1_1 = {}
+L0_1.m_listDungeonUnitRespawnB = L1_1
+NKMDungeonTemplet = L0_1

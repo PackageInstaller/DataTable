@@ -1,0 +1,9 @@
+local L0_1, L1_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenID = 405
+L1_1.m_CutScenStrID = "EP9_5_ACT4_INTERLUDE5"
+L1_1.m_bWaitClick = false
+L1_1.m_fWaitTime = 0
+L0_1[1] = L1_1
+m_dicNKCCutScenTempletByID = L0_1

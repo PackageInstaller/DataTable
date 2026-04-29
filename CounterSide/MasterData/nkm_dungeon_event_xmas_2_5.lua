@@ -1,0 +1,21 @@
+local L0_1, L1_1, L2_1, L3_1
+L0_1 = {}
+L0_1.m_fStartCost = 5
+L0_1.m_fCostSpeedRateB = 0.5
+L0_1.m_BossUnitStrID = "NKM_MOB_BOSS_X_MAS_MAID_S_LEADER_N"
+L0_1.m_fBossPosZ = 0.6
+L1_1 = {}
+L0_1.m_listDungeonDeck = L1_1
+L1_1 = {}
+L0_1.m_listDungeonUnitRespawnB = L1_1
+L1_1 = {}
+L2_1 = {}
+L2_1.m_UnitStrID = "NKM_MOB_ELITE_X_MAS_MAID_C_TONFA_N"
+L3_1 = {}
+L3_1.m_NKM_DUNGEON_EVENT_TYPE = "NDET_ONE_TIME"
+L3_1.m_fEventTimeStart = 2
+L3_1.m_fEventPos = 0.1
+L2_1.m_NKMDungeonEventTiming = L3_1
+L1_1[1] = L2_1
+L0_1.m_listDungeonUnitRespawnB = L1_1
+NKMDungeonTemplet = L0_1

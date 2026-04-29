@@ -1,0 +1,3 @@
+local L0_1, L1_1
+L0_1 = {}
+COLLECTION_ILLUST_TEMPLET = L0_1

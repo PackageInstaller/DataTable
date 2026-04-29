@@ -1,0 +1,18 @@
+local L0_1, L1_1, L2_1, L3_1
+L0_1 = {}
+L0_1.m_fStartCost = 10
+L0_1.m_fCostSpeedRateB = 0.2
+L0_1.m_BossUnitStrID = "NKM_MONSTER_ELITE_BASIC_FALLEN_YUMA_ADMIN_N"
+L0_1.m_fBossPosZ = 0.6
+L1_1 = {}
+L1_1.m_bShowGage = false
+L2_1 = {}
+L3_1 = {}
+L3_1.NST_ATK = 35.0
+L3_1.NST_HP = 4.0
+L3_1.NST_DEF = 0.0
+L3_1.NST_EVADE = 0.0
+L2_1.m_StatFactor = L3_1
+L1_1.m_AddStatData = L2_1
+L0_1.m_BossRespawnUnitTemplet = L1_1
+NKMDungeonTemplet = L0_1

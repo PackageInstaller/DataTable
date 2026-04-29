@@ -1,0 +1,21 @@
+local L0_1, L1_1, L2_1, L3_1
+L0_1 = {}
+L0_1.m_fStartCost = 5
+L0_1.m_fCostSpeedRateB = 0.4
+L0_1.m_BossUnitStrID = "NKM_MOB_BOSS_CHARADE_HORIZON_M_LOAN"
+L0_1.m_fBossPosZ = 0.6
+L1_1 = {}
+L2_1 = {}
+L2_1.m_EventCondition = "ENEMY_BOSS_HP_RATE_LESS"
+L2_1.m_EventConditionNumValue = 33
+L2_1.m_dungeonEventType = "FORCE_WIN"
+L2_1.m_EventActionValue = 0
+L2_1.m_fEventDelay = 1
+L2_1.m_bPause = false
+L3_1 = {}
+L3_1.m_NKM_DUNGEON_EVENT_TYPE = "NDET_ONE_TIME"
+L3_1.m_fEventTimeStart = 0
+L2_1.m_NKMDungeonEventTiming = L3_1
+L1_1[1] = L2_1
+L0_1.m_listDungeonEventTempletTeamA = L1_1
+NKMDungeonTemplet = L0_1

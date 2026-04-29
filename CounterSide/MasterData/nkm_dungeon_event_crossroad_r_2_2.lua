@@ -1,0 +1,21 @@
+local L0_1, L1_1, L2_1, L3_1
+L0_1 = {}
+L0_1.m_fStartCost = 10
+L0_1.m_fCostSpeedRateB = 1
+L0_1.m_BossUnitStrID = "NKM_MONSTER_BOSS_BASIC_HILDE_MOVE_N"
+L0_1.m_fBossPosZ = 0.6
+L1_1 = {}
+L0_1.m_listDungeonDeck = L1_1
+L1_1 = {}
+L2_1 = {}
+L2_1.m_UnitStrID = "NKM_MONSTER_BOSS_BASIC_JOO_SHI_YOON_MOVE_N"
+L3_1 = {}
+L3_1.m_NKM_DUNGEON_EVENT_TYPE = "NDET_ONE_TIME"
+L3_1.m_fEventBossHPLess = 0.6
+L3_1.m_fEventBossHPUpper = 0.3
+L3_1.m_fEventIgnoreBossInitHPLess = false
+L3_1.m_fEventPos = 0.15
+L2_1.m_NKMDungeonEventTiming = L3_1
+L1_1[1] = L2_1
+L0_1.m_listDungeonUnitRespawnB = L1_1
+NKMDungeonTemplet = L0_1

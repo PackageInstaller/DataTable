@@ -1,0 +1,17 @@
+local L0_1, L1_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_EventID = 3223
+L1_1.Zlong_CardCode = "wxmpklcs1"
+L1_1.Zlong_ActivityInstanceId = 1
+L1_1.RewardType_1 = "RT_MISC"
+L1_1.RewardId_1 = 101
+L1_1.RewardValue_1 = 100
+L1_1.RewardType_2 = "RT_MISC"
+L1_1.RewardId_2 = 1
+L1_1.RewardValue_2 = 50000
+L1_1.RewardType_3 = "RT_MISC"
+L1_1.RewardId_3 = 1033
+L1_1.RewardValue_3 = 10
+L0_1[1] = L1_1
+WECHAT_COUPON_TEMPLET = L0_1

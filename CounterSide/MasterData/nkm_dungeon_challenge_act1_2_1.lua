@@ -1,0 +1,27 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1
+L0_1 = {}
+L0_1.m_fStartCost = 6
+L0_1.m_fCostSpeedRateB = 0.8
+L0_1.m_BossUnitStrID = "NKM_MOB_BOSS_CHALLENGE_TOMBSTONE_MINI"
+L0_1.m_fBossPosZ = 0.6
+L1_1 = {}
+L2_1 = {}
+L2_1.m_UnitStrID = "NKM_MOB_NORMAL_CHALLENGE_BITER"
+L3_1 = {}
+L3_1.m_NKM_DUNGEON_EVENT_TYPE = "NDET_DECK"
+L3_1.m_fEventTimeStart = 2
+L3_1.m_fEventTimeEnd = 180
+L3_1.m_fEventPos = 0.15
+L2_1.m_NKMDungeonEventTiming = L3_1
+L3_1 = {}
+L3_1.m_UnitStrID = "NKM_MOB_NORMAL_CHALLENGE_BITER"
+L4_1 = {}
+L4_1.m_NKM_DUNGEON_EVENT_TYPE = "NDET_DECK"
+L4_1.m_fEventTimeStart = 4
+L4_1.m_fEventTimeEnd = 180
+L4_1.m_fEventPos = 0.05
+L3_1.m_NKMDungeonEventTiming = L4_1
+L1_1[1] = L2_1
+L1_1[2] = L3_1
+L0_1.m_listDungeonDeck = L1_1
+NKMDungeonTemplet = L0_1

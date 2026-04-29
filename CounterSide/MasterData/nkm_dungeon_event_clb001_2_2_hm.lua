@@ -1,0 +1,26 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1
+L0_1 = {}
+L0_1.m_fStartCost = 5
+L0_1.m_fCostSpeedRateB = 0.5
+L0_1.m_BossUnitStrID = "NKM_MOB_BOSS_CLB_001_GUILTY_C_SOL"
+L0_1.m_fBossPosZ = 0.6
+L0_1.m_fEnemyHyperCooltimeStartRatio = 0
+L1_1 = {}
+L2_1 = {}
+L2_1.m_UnitStrID = "NKM_MOB_BOSS_CLB_001_ALT_YOO_JIN"
+L3_1 = {}
+L3_1.m_NKM_DUNGEON_EVENT_TYPE = "NDET_ONE_TIME"
+L3_1.m_fEventBossHPLess = 0.8
+L3_1.m_fEventBossHPUpper = 0.5
+L3_1.m_fEventIgnoreBossInitHPLess = false
+L3_1.m_fEventPos = 0.4
+L2_1.m_NKMDungeonEventTiming = L3_1
+L3_1 = {}
+L4_1 = {}
+L4_1.NST_ATK = 1.5
+L4_1.NST_HP = 1.0
+L3_1.m_StatFactor = L4_1
+L2_1.m_AddStatData = L3_1
+L1_1[1] = L2_1
+L0_1.m_listDungeonDeck = L1_1
+NKMDungeonTemplet = L0_1

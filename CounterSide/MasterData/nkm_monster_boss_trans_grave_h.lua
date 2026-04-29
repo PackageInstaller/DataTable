@@ -1,0 +1,19 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1, L5_1
+L0_1 = {}
+L0_1.BASE_UNIT_STR_ID = "NKM_MONSTER_BOSS_TRANS_GRAVE_N"
+L1_1 = {}
+L2_1 = {}
+L2_1.m_StateName = "USN_PATTERN_2"
+L3_1 = {}
+L4_1 = {}
+L5_1 = {}
+L5_1.m_fEventTime = 1.1666666666666667
+L5_1.m_UnitStrID = "NKM_MONSTER_BOSS_TRANS_GRAVE_OBJECT"
+L5_1.m_MaxCount = 2
+L5_1.m_fOffsetX = 1400
+L3_1[1] = L4_1
+L3_1[2] = L5_1
+L2_1.m_listNKMEventRespawn = L3_1
+L1_1[1] = L2_1
+L0_1.m_dicNKMUnitState = L1_1
+NKMUnitTemplet = L0_1

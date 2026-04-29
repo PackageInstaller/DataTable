@@ -1,0 +1,21 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1, L5_1
+L0_1 = {}
+L0_1.BASE_UNIT_STR_ID = "NKM_UNIT_S_FOX_SNIPER"
+L1_1 = {}
+L2_1 = {}
+L2_1.m_StateName = "USN_ATTACK1"
+L3_1 = {}
+L4_1 = {}
+L4_1.m_DEName = "DE_NKM_MONSTER_NORMAL_BASIC_FOX_SNIPER_ATTACK1"
+L3_1[1] = L4_1
+L2_1.m_listNKMEventDamageEffect = L3_1
+L3_1 = {}
+L4_1 = {}
+L5_1 = {}
+L5_1.m_SkillStrID = -1
+L4_1.m_Condition = L5_1
+L3_1[1] = L4_1
+L2_1.m_listNKMEventBuff = L3_1
+L1_1[1] = L2_1
+L0_1.m_dicNKMUnitState = L1_1
+NKMUnitTemplet = L0_1
