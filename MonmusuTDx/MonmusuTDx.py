@@ -323,7 +323,7 @@ def main():
 
     ablist_url = (
         f"https://assets.game-monmusu-td.net/assetbundles/"
-        f"{bundle_version}/windows_r18/ablist.json"
+        f"{bundle_version}/windows_r18/ablist.json" # 这里还可以换成android_r18，webgl_r18，有啥不同我也不知道
     )
     try:
         ab = sess.get(ablist_url, timeout=10).json()
@@ -334,7 +334,7 @@ def main():
     base_ver = ab["baseVersion"]
     base_url = (
         f"https://assets.game-monmusu-td.net/assetbundles/ver_{base_ver}/windows_r18"
-    )
+    ) # 这里还可以换成android_r18，webgl_r18，有啥不同我也不知道
     assets = ab["data"]
 
     console.print(
